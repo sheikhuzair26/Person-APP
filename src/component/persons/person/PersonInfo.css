@@ -1,9 +1,17 @@
-.PersonInfo{
-background: blueviolet;
-padding: 2em;
-margin: 1em;
+.PersonInfo {
+  background: linear-gradient(
+    to bottom,
+    #0f0c29,
+    #302b63,
+    #24243e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  padding: 2em;
+  /* margin: 1em; */
+  border: 1px solid white;
+  color: white;
 }
 
-.PersonInfo .button-group > *{
-    margin: 0px 10px;
+.PersonInfo .button-group > * {
+  margin: 0px 10px;
 }
