@@ -1,11 +1,11 @@
-import React from "react";
+import React from "./node_modules/react";
 import "./PersonInfo.css";
-import { Button, Card, ButtonGroup } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { Button, Card, ButtonGroup } from "./node_modules/react-bootstrap";
+import "./node_modules/bootstrap/dist/css/bootstrap.min.css";
+import { FontAwesomeIcon } from "./node_modules/@fortawesome/react-fontawesome";
+import { faEdit, faTrash } from "./node_modules/@fortawesome/free-solid-svg-icons";
 
-import PropType from "prop-types";
+import PropType from "./node_modules/prop-types";
 
 const PersonInfo = props => {
   return (

@@ -1,10 +1,10 @@
-import React from "react";
+import React from "./node_modules/react";
 import "./PersonEdit.css";
-import PropType from "prop-types";
-import { Button, Card, ButtonGroup } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
+import PropType from "./node_modules/prop-types";
+import { Button, Card, ButtonGroup } from "./node_modules/react-bootstrap";
+import "./node_modules/bootstrap/dist/css/bootstrap.min.css";
+import { FontAwesomeIcon } from "./node_modules/@fortawesome/react-fontawesome";
+import { faCheck, faTimes } from "./node_modules/@fortawesome/free-solid-svg-icons";
 
 const PersonEdit = props => {
   return (

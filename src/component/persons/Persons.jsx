@@ -1,6 +1,6 @@
 import React from "react";
 import "./Persons.css";
-import Person from "./person/Person";
+import Person from "./Person/Person";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Persons = () => {
@@ -15,7 +15,7 @@ const Persons = () => {
       name: "Zarrar",
       age: 19,
       description: "Cardio Doctor",
-      isEditMode: true
+      isEditMode: false
     },
 
     {

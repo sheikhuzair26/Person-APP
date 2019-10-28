@@ -1,14 +1,14 @@
-import React from "react";
-import "../person/Person.css";
+import React from "./node_modules/react";
+import "./Person.css";
 import PersonInfo from "./PersonInfo";
 import PersonEdit from "./PersonEdit";
-import PropType from "prop-types";
-import { Button, Card } from "react-bootstrap";
+import PropType from "./node_modules/prop-types";
+import { Button, Card } from "./node_modules/react-bootstrap";
 
 const Person = props => {
   return (
     <>
-      <Card style={{ width: "18rem" }}>
+      <Card className="Person">
         {props.personMainAtt.isEditMode ? (
           <PersonEdit personPassAttribute={props.personMainAtt} />
         ) : (
