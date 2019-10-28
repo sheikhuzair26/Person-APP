@@ -1,5 +1,9 @@
 .PersonInfo{
-background: rosybrown;
+background: blueviolet;
 padding: 2em;
 margin: 1em;
+}
+
+.PersonInfo .button-group > *{
+    margin: 0px 10px;
 }
