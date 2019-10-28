@@ -1,29 +1,30 @@
-import React from "./node_modules/react";
-import "./Person.css";
+import React from "react";
+import "../person/Person.css";
 import PersonInfo from "./PersonInfo";
 import PersonEdit from "./PersonEdit";
-import PropType from "./node_modules/prop-types";
-import { Button, Card } from "./node_modules/react-bootstrap";
+import PropType from "prop-types";
+import { Button, Card } from "react-bootstrap";
 
 const Person = props => {
+  
   return (
     <>
       <Card className="Person">
         {props.personMainAtt.isEditMode ? (
           <PersonEdit personPassAttribute={props.personMainAtt} />
         ) : (
-          <PersonInfo personPassAttribute={props.personMainAtt} />
+          <PersonInfo personPassAttribute={props.personMainAtt} 
+          jabEditButtonClickHoToKyaKaro ={props.callMeWhenYouWantToEnableEdit}
+          />
         )}
       </Card>
-
-      {/* Person Comp
-        { props.isEditMode ? <PersonEdit/> : <PersonInfo/>} */}
     </>
   );
 };
 
 Person.propTypes = {
-  personMainAtt: PropType.object
+  personMainAtt: PropType.object,
+  callMeWhenYouWantToEnableEdit : PropType.func
 };
 
 export default Person;

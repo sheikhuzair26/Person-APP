@@ -1,11 +1,11 @@
-import React from "./node_modules/react";
+import React from "react";
 import "./PersonInfo.css";
-import { Button, Card, ButtonGroup } from "./node_modules/react-bootstrap";
-import "./node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { FontAwesomeIcon } from "./node_modules/@fortawesome/react-fontawesome";
-import { faEdit, faTrash } from "./node_modules/@fortawesome/free-solid-svg-icons";
+import { Button, Card, ButtonGroup } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
-import PropType from "./node_modules/prop-types";
+import PropType from "prop-types";
 
 const PersonInfo = props => {
   return (
@@ -15,7 +15,7 @@ const PersonInfo = props => {
       </Card.Title>
       <Card.Text>{props.personPassAttribute.description}</Card.Text>
       <ButtonGroup className="button-group" aria-label="Basic example">
-        <Button variant="light">
+        <Button variant="light" onClick={props.jabEditButtonClickHoToKyaKaro}>
           <FontAwesomeIcon className="text-info" icon={faEdit} />
         </Button>
         <Button variant="light">
@@ -27,7 +27,8 @@ const PersonInfo = props => {
 };
 
 PersonInfo.propTypes = {
-  personPassAttribute: PropType.object
+  personPassAttribute: PropType.object,
+  jabEditButtonClickHoToKyaKaro : PropType.func 
 };
 
 export default PersonInfo;

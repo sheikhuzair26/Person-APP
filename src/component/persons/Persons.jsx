@@ -25,12 +25,18 @@ const Persons = () => {
       isEditMode: false
     }
   ];
+  const enableEdit = () => alert("hi I am blah");
+  // props.personPassAttribute = true;
+
   return (
     <div className="Persons">
       <h1>Persons</h1>
 
       {personsData.map(personVar => (
-        <Person personMainAtt={personVar} />
+        <Person
+          personMainAtt={personVar}
+          callMeWhenYouWantToEnableEdit={enableEdit}
+        />
       ))}
     </div>
   );
