@@ -1,6 +1,6 @@
 import React from "react";
 import "./Persons.css";
-import Person from "./Person/Person";
+import Person from "./person/Person";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Persons = () => {
