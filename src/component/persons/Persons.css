@@ -5,15 +5,13 @@
     #93291e
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 2em;
-  margin: 1em 37em;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  
 }
 
-h1{
-    text-transform: uppercase;
-    text-shadow: 3px 3px 3px beige;
+h1 {
+  text-transform: uppercase;
+  text-shadow: 3px 3px 3px beige;
 }

@@ -1,45 +1,64 @@
-import React from "react";
 import "./Persons.css";
 import Person from "./person/Person";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Persons = () => {
-  const personsData = [
-    {
-      name: "Amir",
-      age: 10,
-      description: "Mechanic in Honda",
-      isEditMode: false
-    },
-    {
-      name: "Zarrar",
-      age: 19,
-      description: "Cardio Doctor",
-      isEditMode: false
-    },
+import React, { Component } from "react";
 
-    {
-      name: "HamzA",
-      age: 18,
-      description: "Manager at his home",
-      isEditMode: false
-    }
-  ];
-  const enableEdit = () => alert("hi I am blah");
-  // props.personPassAttribute = true;
+class Persons extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      personsData: [
+        {
+          name: "Amir",
+          age: 10,
+          description: "Mechanic in Honda",
+          isEditMode: false
+        },
+        {
+          name: "Zarrar",
+          age: 19,
+          description: "Cardio Doctor",
+          isEditMode: false
+        },
 
-  return (
-    <div className="Persons">
-      <h1>Persons</h1>
+        {
+          name: "HamzA",
+          age: 18,
+          description: "Manager at his home",
+          isEditMode: false
+        }
+      ]
+    };
+  }
 
-      {personsData.map(personVar => (
-        <Person
-          personMainAtt={personVar}
-          callMeWhenYouWantToEnableEdit={enableEdit}
-        />
-      ))}
-    </div>
-  );
-};
+  enableEdit = callBackClicked => {
+    this.setState({
+      personsData: this.state.personsData.map
+      (changePersonCallBack => {
+        if (changePersonCallBack.name === callBackClicked.name) {
+          changePersonCallBack.isEditMode = true;
+        } else {
+        }
+        return changePersonCallBack;
+      })
+    });
+  };
+
+  render() {
+    return (
+      <div className="Persons">
+        <h1>Persons</h1>
+
+        {this.state.personsData.map(personVar => (
+          <Person
+            personMainAtt={personVar}
+            callMeWhenYouWantToEnableEdit={() => this.enableEdit(personVar)}
+          />
+        ))}
+      </div>
+    );
+  }
+}
 
 export default Persons;
