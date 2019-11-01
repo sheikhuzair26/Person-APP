@@ -1,7 +1,7 @@
 import "./Persons.css";
 import Person from "./person/Person";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import Background from "../images/back.jpg";
 import React, { Component } from "react";
 
 class Persons extends Component {
@@ -32,12 +32,11 @@ class Persons extends Component {
     };
   }
 
-  enableEdit = callBackClicked => {
+  toggleEditMood = (callBackClickedPerson, newValue) => {
     this.setState({
-      personsData: this.state.personsData.map
-      (changePersonCallBack => {
-        if (changePersonCallBack.name === callBackClicked.name) {
-          changePersonCallBack.isEditMode = true;
+      personsData: this.state.personsData.map(changePersonCallBack => {
+        if (changePersonCallBack.name === callBackClickedPerson.name) {
+          changePersonCallBack.isEditMode = newValue;
         } else {
         }
         return changePersonCallBack;
@@ -45,15 +44,29 @@ class Persons extends Component {
     });
   };
 
+  deletePersonFun = ClickedPerson => {
+    this.setState({
+      personsData: this.state.personsData.filter(
+        personDlt => personDlt.name !== ClickedPerson.name
+      )
+    });
+  };
+
   render() {
     return (
       <div className="Persons">
-        <h1>Persons</h1>
+        <h1>Person App</h1>
 
         {this.state.personsData.map(personVar => (
           <Person
             personMainAtt={personVar}
-            callMeWhenYouWantToEnableEdit={() => this.enableEdit(personVar)}
+            removeClickedPerson={() => this.deletePersonFun(personVar)}
+            callMeWhenYouWantToEnableEdit={() =>
+              this.toggleEditMood(personVar, true)
+            }
+            callMeWhenYouWantToDisableEdit={() =>
+              this.toggleEditMood(personVar, false)
+            }
           />
         ))}
       </div>

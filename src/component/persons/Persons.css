@@ -1,9 +1,6 @@
 .Persons {
-  background: linear-gradient(
-    to bottom,
-    #ed213a,
-    #93291e
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: url("../images/back.jpg");
+  background-size: cover;
   padding: 2em;
   display: flex;
   flex-direction: column;
@@ -12,6 +9,8 @@
 }
 
 h1 {
+  color: white;
   text-transform: uppercase;
-  text-shadow: 3px 3px 3px beige;
+  text-shadow: 3px 3px 3px #2c4e6c;
+  text-transform: capitalize;
 }

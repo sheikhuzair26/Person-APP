@@ -19,7 +19,7 @@ const PersonEdit = props => {
         <Button variant="light">
           <FontAwesomeIcon className="text-info" icon={faCheck} />
         </Button>
-        <Button variant="light">
+        <Button variant="light" onClick={props.cancelClickAction}>
           <FontAwesomeIcon className="text-danger" icon={faTimes} />
         </Button>
       </ButtonGroup>
@@ -28,7 +28,8 @@ const PersonEdit = props => {
 };
 
 PersonEdit.propTypes = {
-   personPassAttribute : PropType.object
+   personPassAttribute : PropType.object,
+   cancelClickAction  : PropType.func
 };
 
 export default PersonEdit;

@@ -18,7 +18,7 @@ const PersonInfo = props => {
         <Button variant="light" onClick={props.jabEditButtonClickHoToKyaKaro}>
           <FontAwesomeIcon className="text-info" icon={faEdit} />
         </Button>
-        <Button variant="light">
+        <Button variant="light" onClick={props.removePerson}>
           <FontAwesomeIcon className="text-danger" icon={faTrash} />
         </Button>
       </ButtonGroup>
@@ -28,7 +28,8 @@ const PersonInfo = props => {
 
 PersonInfo.propTypes = {
   personPassAttribute: PropType.object,
-  jabEditButtonClickHoToKyaKaro : PropType.func 
+  jabEditButtonClickHoToKyaKaro : PropType.func ,
+  removePerson : PropType.func
 };
 
 export default PersonInfo;

@@ -11,10 +11,13 @@ const Person = props => {
     <>
       <Card className="Person">
         {props.personMainAtt.isEditMode ? (
-          <PersonEdit personPassAttribute={props.personMainAtt} />
+          <PersonEdit personPassAttribute={props.personMainAtt} 
+          cancelClickAction = {props.callMeWhenYouWantToDisableEdit}
+          />
         ) : (
           <PersonInfo personPassAttribute={props.personMainAtt} 
           jabEditButtonClickHoToKyaKaro ={props.callMeWhenYouWantToEnableEdit}
+          removePerson = {props.removeClickedPerson}
           />
         )}
       </Card>
@@ -24,7 +27,9 @@ const Person = props => {
 
 Person.propTypes = {
   personMainAtt: PropType.object,
-  callMeWhenYouWantToEnableEdit : PropType.func
+  callMeWhenYouWantToEnableEdit : PropType.func,
+  callMeWhenYouWantToDisableEdit : PropType.func,
+  removeClickedPerson : PropType.func
 };
 
 export default Person;
