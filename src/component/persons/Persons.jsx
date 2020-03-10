@@ -44,6 +44,20 @@ class Persons extends Component {
     });
   };
 
+
+  editPerson = (person, newPerson) => {
+    this.setState({
+      personsData: this.state.personsData.map(changePersonCallBack => {
+        if (changePersonCallBack.name === person.name) {
+          changePersonCallBack.name = newPerson.name;
+          // return Object.assign(changePersonCallBack, newPerson)
+        } else {}
+        return changePersonCallBack;
+      })
+    });
+  
+   } 
+  
   deletePersonFun = ClickedPerson => {
     this.setState({
       personsData: this.state.personsData.filter(
@@ -57,15 +71,15 @@ class Persons extends Component {
       <div className="Persons">
         <h1>Person App</h1>
 
-        {this.state.personsData.map(personVar => (
-          <Person
+        {this.state.personsData.map(personVar => ( <Person 
             personMainAtt={personVar}
             removeClickedPerson={() => this.deletePersonFun(personVar)}
-            callMeWhenYouWantToEnableEdit={() =>
-              this.toggleEditMood(personVar, true)
-            }
-            callMeWhenYouWantToDisableEdit={() =>
-              this.toggleEditMood(personVar, false)
+            callmeWhenYouEditPerson= {
+              (newPerson) =>{ 
+                this.editPerson(personVar, newPerson)
+              this.toggleEditMood(personVar, false)}}
+            callMeWhenYouWantToEnableEdit={() =>this.toggleEditMood(personVar, true)}
+            callMeWhenYouWantToDisableEdit={() =>this.toggleEditMood(personVar, false)
             }
           />
         ))}

@@ -13,6 +13,7 @@ const Person = props => {
         {props.personMainAtt.isEditMode ? (
           <PersonEdit personPassAttribute={props.personMainAtt} 
           cancelClickAction = {props.callMeWhenYouWantToDisableEdit}
+          saveEdit = {props.callmeWhenYouEditPerson}
           />
         ) : (
           <PersonInfo personPassAttribute={props.personMainAtt} 
@@ -29,7 +30,8 @@ Person.propTypes = {
   personMainAtt: PropType.object,
   callMeWhenYouWantToEnableEdit : PropType.func,
   callMeWhenYouWantToDisableEdit : PropType.func,
-  removeClickedPerson : PropType.func
+  removeClickedPerson : PropType.func,
+  callmeWhenYouEditPerson: PropType.func,
 };
 
 export default Person;
